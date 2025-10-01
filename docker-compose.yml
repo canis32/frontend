@@ -10,11 +10,11 @@ services:
     environment:
       - NODE_ENV=production
     restart: unless-stopped
-#     networks:
-#       - strapi
+    networks:
+      - strapi
 
 
-# networks:
-#   strapi:
-#     name: Strapi
-#     driver: bridge
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge
