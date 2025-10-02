@@ -1,12 +1,12 @@
 export const navItems = [
   {
     title: 'Коллекции',
-    link: '/',
+    link: '/collections',
   },
   
   {
     title: 'О бренде',
-    link: '/',
+    link: '/collections',
   },
   
   {
@@ -18,12 +18,12 @@ export const navItems = [
 
   {
     title: 'Инфо',
-    link: '/',
+    link: '/collections',
   },
 
   {
     title: 'Контакты',
-    link: '/',
+    link: '/collections',
   },
   {
     title: '',

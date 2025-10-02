@@ -7,4 +7,14 @@ export default defineNuxtConfig({
     '@': '../app',
     '~': '../'
   },
+  modules: [
+    '@pinia/nuxt'
+  ],
+  serverDir: 'server',
+  runtimeConfig: {
+    apiKey: import.meta.env.NUXT_PRIVATE_KEY_FOR_STRAPI,
+    public: {
+      baseURL: import.meta.env.NUXT_PUBLIC_BASE_URL,
+    },
+  }
 })
