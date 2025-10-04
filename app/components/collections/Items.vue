@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <ul class="list-reset items-list">
-      <li v-for="item in collectionsList" :key="item.documentId">
+  <div class="collections-items">
+    <ul class="list-reset collections-items__list">
+      <li v-for="item in collectionsList" :key="item.documentId || ''">
         <CollectionsItem
-          :img="item.img.url"
-          :title="item.title"
-          :description="item.description"
-          :id="item.id"
+          :img="item.img.url || ''"
+          :title="item.title || ''"
+          :description="item.description || ''"
+          :link="item.documentId || ''"
         />
       </li>
     </ul>
@@ -21,4 +21,12 @@ defineProps<{
 }>()
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.collections-items {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 74px;
+  }
+}
+</style>

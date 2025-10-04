@@ -19,14 +19,18 @@
             Архивные коллекции — это возможность заглянуть в историю бренда и
             посмотреть, какие коллекции производились ранее.
           </p>
-          <NuxtLink to="/" class="collection__link">Перейти в каталог</NuxtLink>
+          <NuxtLink to="/collections" class="collection__link"
+            >Перейти в каталог</NuxtLink
+          >
         </div>
         <img
           src="/svg/collection.svg"
           alt="collection"
           class="collection__image"
         />
-        <NuxtLink to="/" class="collection__link-2">Перейти в каталог</NuxtLink>
+        <NuxtLink to="/collections" class="collection__link-2"
+          >Перейти в каталог</NuxtLink
+        >
       </div>
     </div>
   </section>

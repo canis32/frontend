@@ -17,6 +17,12 @@
                   alt="logo"
                   :class="item.isLogo ? 'header__logo' : 'header__icon'"
                 />
+                <span
+                  v-if="item.isCart && cartStore.getTotalItems > 0"
+                  class="cart-badge"
+                >
+                  {{ cartStore.getTotalItems }}
+                </span>
               </NuxtLink>
             </li>
           </ul>
@@ -30,12 +36,16 @@
 </template>
 
 <script lang="ts" setup>
+import { useCartStore } from '../../stores/cart'
+
 const props = defineProps({
   bgColor: {
     type: String,
     default: '#292929',
   },
 })
+
+const cartStore = useCartStore()
 </script>
 
 <style lang="scss" scoped>
@@ -57,16 +67,20 @@ const props = defineProps({
     width: 100%;
     height: 100%;
     &-item {
+      position: relative;
+
       &-link {
         color: #fff;
         font-family: 'Montserrat Alternates';
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-
         letter-spacing: 1.6px;
         text-decoration: none;
         text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        position: relative;
       }
     }
   }
@@ -76,5 +90,25 @@ const props = defineProps({
     justify-content: center;
     gap: 27px;
   }
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4444;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat Alternates';
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 20px;
+  padding: 2px;
 }
 </style>

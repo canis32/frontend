@@ -15,10 +15,14 @@
             особенности питомцев, потребности в защите от погодных условий и
             современные тренды.
           </p>
-          <NuxtLink to="/" class="brends__link">Перейти в каталог</NuxtLink>
+          <NuxtLink to="/collections" class="brends__link"
+            >Перейти в каталог</NuxtLink
+          >
         </div>
         <img src="/svg/brands.svg" alt="brends" class="brends__image" />
-        <NuxtLink to="/" class="brends__link-2">Перейти в каталог</NuxtLink>
+        <NuxtLink to="/collections" class="brends__link-2"
+          >Перейти в каталог</NuxtLink
+        >
       </div>
     </div>
   </section>

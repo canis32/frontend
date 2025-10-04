@@ -2,7 +2,9 @@
   <section class="whyus">
     <div class="container">
       <div class="whyus__wrapper">
-        <NuxtLink to="/" class="whyus__link-2">Перейти в каталог</NuxtLink>
+        <NuxtLink to="/collections" class="whyus__link-2"
+          >Перейти в каталог</NuxtLink
+        >
         <img src="/svg/whyus.svg" alt="whyus" class="whyus__image" />
 
         <div class="whyus__content">
@@ -20,7 +22,9 @@
             чтобы она сидела идеально. Защита в любую погоду – Дождевики, теплые
             комбинезоны и легкие футболки — у нас есть одежда на все сезоны.
           </p>
-          <NuxtLink to="/" class="whyus__link">Перейти в каталог</NuxtLink>
+          <NuxtLink to="/collections" class="whyus__link"
+            >Перейти в каталог</NuxtLink
+          >
         </div>
       </div>
     </div>

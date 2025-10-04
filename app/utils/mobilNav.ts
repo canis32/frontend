@@ -1,21 +1,21 @@
 export const mobilNav = [
   {
     title: 'Коллекции',
-    link: '/',
+    link: '/collections',
   },
   
   {
     title: 'О бренде',
-    link: '/',
+    link: '/collections',
   },
 
   {
     title: 'Инфо',
-    link: '/',
+    link: '/collections',
   },
 
   {
     title: 'Контакты',
-    link: '/',
+    link: '/collections',
   },
 ]

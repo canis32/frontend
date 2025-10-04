@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import Aura from '@primeuix/themes/aura';
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -7,10 +8,34 @@ export default defineNuxtConfig({
     '@': '../app',
     '~': '../'
   },
-  modules: [
-    '@pinia/nuxt'
-  ],
+  modules: ['@pinia/nuxt', '@primevue/nuxt-module', ['nuxt-mail', {
+    message: {
+      to: 'd.kireenkov32rus@yandex.ru',
+    },
+    smtp: {
+      service: 'yandex',
+      auth: {
+        user: 'd.kireenkov32rus@yandex.ru',
+        pass: 'fwogtrwkitvsutwq',
+      },
+      host: "smtp.yandex.ru",
+      port: 465,
+      secure: true,
+      requireTLS: true,
+    },
+  }], 'nuxt-mail'],
   serverDir: 'server',
+  primevue: {
+    components: {
+        prefix: 'Prime',
+        include: ['Paginator ', 'InputText', 'Button']
+    },
+    options: {
+      theme: {
+          preset: Aura
+      }
+    }
+  },
   runtimeConfig: {
     apiKey: import.meta.env.NUXT_PRIVATE_KEY_FOR_STRAPI,
     public: {

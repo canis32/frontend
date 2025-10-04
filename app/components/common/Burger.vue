@@ -48,6 +48,7 @@
 </template>
 
 <script lang="ts" setup>
+import { watch, onUnmounted } from 'vue'
 interface Props {
   isOpen: boolean
 }
@@ -68,6 +69,23 @@ const toggleMenu = () => {
 const closeMenu = () => {
   emit('close')
 }
+
+// Блокируем скролл при открытии меню
+watch(
+  () => props.isOpen,
+  (isOpen) => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }
+)
+
+// Очищаем стили при размонтировании компонента
+onUnmounted(() => {
+  document.body.style.overflow = ''
+})
 </script>
 
 <style lang="scss" scoped>
@@ -106,7 +124,7 @@ const closeMenu = () => {
   .burger__line {
     &:nth-child(1) {
       transform: rotate(44deg) translate(8px, 8px);
-      background-color: #054263;
+      background-color: #ffffff;
     }
 
     &:nth-child(2) {
@@ -116,7 +134,7 @@ const closeMenu = () => {
 
     &:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
-      background-color: #054263;
+      background-color: #ffffff;
     }
   }
 }
@@ -137,7 +155,7 @@ const closeMenu = () => {
 .mobile-menu {
   width: 280px;
   height: 100vh;
-  background: #ffffff;
+  background: #292929;
   padding: 130px 50px 20px 50px;
   display: flex;
   flex-direction: column;
@@ -147,6 +165,7 @@ const closeMenu = () => {
   }
   @media screen and (max-width: 480px) {
     padding: 130px 50px 20px 15px;
+    width: 100%;
   }
 }
 .mobile-menu__header {
@@ -212,15 +231,15 @@ const closeMenu = () => {
   font-family: 'Montserrat Alternates';
   font-size: 16px;
   font-weight: 500;
-  color: #054263;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
   display: block;
   text-transform: uppercase;
 
-  &:hover {
-    color: #0086e2;
-  }
+  // &:hover {
+  //   color: #0086e2;
+  // }
 }
 
 .mobile-menu__contacts {
@@ -232,14 +251,14 @@ const closeMenu = () => {
   font-family: 'Montserrat Alternates';
   font-size: 16px;
   font-weight: 400;
-  color: #054263;
+  color: #ffffff;
   text-decoration: none;
   margin-bottom: 10px;
   transition: color 0.3s ease;
 
-  &:hover {
-    color: #0086e2;
-  }
+  // &:hover {
+  //   color: #0086e2;
+  // }
 }
 
 .mobile-menu-enter-active,

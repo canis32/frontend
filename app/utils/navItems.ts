@@ -27,7 +27,7 @@ export const navItems = [
   },
   {
     title: '',
-    link: '/',
+    link: '/cart',
     image: '/img/cart.png',
     isCart: true,
   },
